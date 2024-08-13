@@ -12,7 +12,7 @@
   footer {
     text-align: center;
   }
-  footer :hover {
+  footer:hover {
     background-color: whitesmoke;
   }
   .gallery {

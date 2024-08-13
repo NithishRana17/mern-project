@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    button:hover{
+        background-color: aqua;
+    }
+    </style>
+</head>
+<body>
+    <input id="num1" type="text" placeholder="Enter First Number">
+    <input id="num2" type="text" placeholder="Enter Second Number">
+    <h1 id="result">_____________</h1>
+    <button id="add">Add</button>
+    <button id="sub">Sub</button>
+    <button id="multiply">Multipy</button>
+    <button id="divide">Divide</button>
+</body>
+<script>
+    
+    // document.getElementById("add").addEventListener("click", addition);
+    document.getElementById("sub").addEventListener("click", subtraction);
+    document.getElementById("multiply").addEventListener("click", multiplication);
+    document.getElementById("divide").addEventListener("click", division);
+
+    document.querySelector("#add").addEventListener("click", addition);
+
+    function addition() {
+        document.getElementById("result").innerHTML =
+         parseInt(document.getElementById("num1").value) + parseInt(document.getElementById("num2").value)
+    }
+    function subtraction() {
+        document.getElementById("result").innerHTML =
+         parseInt(document.getElementById("num1").value) - parseInt(document.getElementById("num2").value)
+    }
+    function multiplication() {
+        document.getElementById("result").innerHTML =
+         parseInt(document.getElementById("num1").value) * parseInt(document.getElementById("num2").value)
+    }
+    function division() {
+        document.getElementById("result").innerHTML =
+         parseInt(document.getElementById("num1").value) / parseInt(document.getElementById("num2").value)
+    }
+</script>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            color: red;
+            
+        }
+        .input_txtt{
+            border-color:red;
+            border-width: 5px;
+            
+        }
+        .blue{
+            color:blue;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1 id="h1_id"> Hello im Nithish Cena</h1>
+    <button id="red_id">Red</button>
+    <button id="blue_id">Blue</button>
+    
+    <input type="text" id="input_txt"/>
+    <button type="submit" onclick="bun()">Click me</button>
+    <script>
+        document.querySelector('#red_id').addEventListener("click",chgred);
+        document.querySelector('#blue_id').addEventListener("click",chgblue);
+        
+
+        function chgred() {
+            document.querySelector("#h1_id").classList.remove('blue');
+            document.querySelector("#h1_id").classList.add('red');
+
+        }
+        function chgblue(){
+            document.querySelector("#h1_id").classList.remove('red');
+            document.querySelector("#h1_id").classList.add('blue');
+            
+        }
+        function bun(){
+            if(document.getElementById("input_txt").value == ""){
+                document.querySelector("#input_txt").classList.add("input_txtt")
+            }else{
+                document.querySelector("#input_txt").classList.remove("input_txtt")
+
+            }
+            
+        }
+    </script>
+</body>
+</html>
