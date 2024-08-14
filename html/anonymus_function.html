@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt">
+    <button id="button_id">Click</button>
+    <select id="dropdown">
+        <option value="Nithish">Nithish</option>
+        <option value="Ashok">Ashok</option>
+        <option value="Jofin">Jofin</option>
+    </select>
+</body>
+<script>
+    document.getElementById('button_id').addEventListener('click', () => {
+        let val = document.getElementById('txt').value;
+        console.log(val);
+    });
+
+    document.getElementById('dropdown').addEventListener('change', (e) => {
+        console.log(e.target.value);
+    });
+</script>
+</html>

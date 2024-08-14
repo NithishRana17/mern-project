@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        var doubleevenNumbers = num.filter(n => n % 2 === 0).map(n => n * 2);
+        
+            console.log(doubleevenNumbers);
+        
+            let users = [
+            { firstName: "John", lastName: "Doe" },
+            { firstName: "Jane", lastName: "Smith" },
+            { firstName: "Jack", lastName: "Johnson" }
+            ];
+        
+            let fullNames = users.map(user => `${user.firstName} ${user.lastName}`);
+        
+            console.log(fullNames);
+        
+            let name = ["akash","pandiya","gunas","jofin"];
+            var filtered_names = name.filter(i => i.startsWith('a'));
+            console.log(filtered_names);
+    </script>
+</body>
+</html>

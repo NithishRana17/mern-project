@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button id="b1">Click</button>
+</body>
+<script>
+    async function getApi() {
+        let res = await fetch("https://reqres.in/api/users?page=2" , {"method" : "GET"});
+        let json = await res.json();
+        console.log(json);
+    }
+    document.getElementById("b1").addEventListener("click", getApi);
+
+    async function postApi() {
+        let data = {
+            "name" : "Nithish",
+            "job" : "Game Development"
+        } 
+        let res = await fetch("https://reqres.in/api/users", {
+            "method" : "POST", 
+            body:JSON.stringify(data),
+            headers:{"content-type":"application/json"}
+        });
+        let json = await res.json();
+        console.log(json);
+    }
+    document.getElementById("b1").addEventListener("click", postApi);
+</script>
+</html>

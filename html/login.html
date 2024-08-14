@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="email" id="email" placeholder="email">
+    <input type="password" id="pass" placeholder="password">
+    <button id="b1">login</button>
+</body>
+<script>
+    async function postApi() {
+        let data = {
+            "email" : "eve.holt@reqres.in",
+            "password" : "cityslicka"
+        } 
+        let res = await fetch("https://reqres.in/api/login", {
+            "method" : "POST",
+            body:JSON.stringify(data),
+            headers:{"content-type":"application/json"}
+        });
+        let json = await res.json();
+        console.log(json);
+    }
+    document.getElementById("b1").addEventListener("click", postApi);
+</script>
+</html>
