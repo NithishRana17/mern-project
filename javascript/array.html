@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*let person = [
+            {
+            "name" : "akash",
+            "mobile" : 7529454348,
+            "address" : "no1"
+            },
+            {
+            "name" : "arun",
+            "mobile" : 7320483650,
+            "address" : "no2"
+            },
+            {
+            "name" : "balaji",
+            "mobile" : 7647803618,
+            "address" : "no3"
+            }
+        ]
+        for (let i in person) {
+            console.log(person[i]["name"]);
+        }*/
+        async function getUserList(){
+            let res = await fetch("https://reqres.in/api/users", {"method": "GET"});
+            let json = await res.json();
+            for(let i in json['data']){
+                console.log(json['data'][i]["first_name"]);
+                console.log(json['data'][i]["email"]);
+            }
+        }
+        getUserList();
+        // Set item
+        localStorage.setItem('theme', 'dark');
+
+        // Get item
+        console.log(localStorage.getItem('theme')); // Outputs: dark
+
+    </script>
+</body>
+</html>
