@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: lightblue;
+      }
+      .Register {
+        border: 2px solid black;
+        border-radius: 5%;
+        padding: 2%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .Register div {
+        margin-top: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .Register button {
+        margin-top: 5%;
+        border: none;
+        height: 150%;
+        border-radius: 10%;
+        background-color: turquoise;
+        color: black;
+        padding: 5% 10%;
+      }
+      a {
+        margin-top: 5%;
+      }
+      .menu {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+      }
+      .menu li {
+        display: inline;
+      }
+      .menu a {
+        text-decoration: none;
+        color: black;
+      }
+      .menu a:hover{
+        background-color: cyan;
+      }
+      .menu a.active {
+        font-weight: bold;
+        color:darkorange;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="menu">
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a class="active" href="register.html">Register</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="Register">
+      <h2>Register</h2>
+      <div>
+        <label for="email">Email: (eve.holt@reqres.in)</label>
+        <input type="text" id="uname" />
+      </div>
+      <div>
+        <label for="pass">Password:</label>
+        <input type="password" id="pass" />
+      </div>
+      <button type="button" onclick="fetchRegister()">Register</button>
+      <a href="/login.html">Already had a account? Login </a>
+    </div>
+    <footer>
+      <p>NITHISH © 24</p>
+    </footer>
+  </body>
+  <script>
+    async function fetchRegister() {
+      let data = {
+        email: document.getElementById("uname").value,
+        password: document.getElementById("pass").value,
+      };
+      if (!data["email"] && !data["password"]) {
+        alert("Enter Username and Password");
+        return;
+      }
+      let res = await fetch("https://reqres.in/api/register", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "content-type": "application/json" },
+      });
+      let json = await res.json();
+      console.log(json);
+      if (json["token"]) {
+        alert("Register successful!");
+      } else {
+        alert("Register unsuccessful!")
+      }
+    }
+  </script>
+</html>

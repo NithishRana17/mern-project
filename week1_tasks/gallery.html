@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 1px;
+        margin-top: 10%;
+        background-color: lightblue;
+      }
+      div {
+        border: 2px solid black;
+        display: flex;
+        margin: 2%;
+      }
+      div img:hover {
+        transform: scale(1.1) rotate(10deg);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+      }
+      .gallery {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+      }
+      .menu {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+      }
+      .menu li {
+        display: inline;
+      }
+      .menu a {
+        text-decoration: none;
+        color: black;
+      }
+      .menu a:hover{
+        background-color: cyan;
+      }
+      .menu a.active {
+        font-weight: bold;
+        color:darkorange;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="menu">
+      <li><a class="active" href="gallery.html">Gallery</a></li>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="gallery">
+      <div>
+        <img src="https://picsum.photos/200/300?random=1" alt="" />
+      </div>
+      <div>
+        <img src="https://picsum.photos/200/300?random=2" alt="" />
+      </div>
+      <div>
+        <img src="https://picsum.photos/200/300?random=3" alt="" />
+      </div>
+      <div>
+        <img src="https://picsum.photos/200/300?random=4" alt="" />
+      </div>
+      <div>
+        <img src="https://picsum.photos/200/300?random=5" alt="" />
+      </div>
+    </div>
+    <footer>
+        <p>NITHISH © 24</p>
+    </footer>
+  </body>
+</html>

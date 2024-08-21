@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magazine Layout</title>
+    <link rel="stylesheet" href="assesment1.css">
+</head>
+<body>
+    <header>
+        <h1>MAGAZINE</h1>
+    </header>
+    <nav>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <ul id="menu">
+            <li><a href="#news">NEWS</a></li>
+            <li><a href="#art">ART</a></li>
+            <li><a href="#design">DESIGN</a></li>
+            <li><a href="#culture">CULTURE</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="main-content">
+            <img src="pubg3.jpg" alt="Main Image">
+            <div class="content">
+                <h2>CONTEMPORARY ART</h2>
+                <p>some content to be typed here ...</p>
+            </div>
+        </section>
+        <section class="icons">
+            <div class="icon">
+                <img src="pubg1.jpg" alt="Pencil Icon">
+                <h2>Title 1</h2>
+                <p>Content for title 1...</p>
+            </div>
+            <div class="icon">
+                <img src="pubg2.jpg" alt="Lightbulb Icon">
+                <h2>Title 2</h2>
+                <p>Content for title 2...</p>
+            </div>
+            <div class="icon">
+                <img src="pubg3.jpg" alt="Eye Icon">
+                <h2>Title 3</h2>
+                <p>Content for title 3...</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Magazine</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

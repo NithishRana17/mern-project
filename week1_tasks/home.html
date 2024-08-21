@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: lightblue;
+      }
+      .array {
+        border: 2px solid black;
+        display: flex;
+        border-radius: 5%;
+        padding: 5%;
+        flex-direction: column;
+      }
+      button {
+        background-color: turquoise;
+        color: black;
+        padding: 5px 10px;
+        margin-top: 5%;
+      }
+      .menu {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+      }
+      .menu li {
+        display: inline;
+      }
+      .menu a {
+        text-decoration: none;
+        color: black;
+      }
+      .menu a:hover{
+        background-color: cyan;
+      }
+      .menu a.active {
+        font-weight: bold;
+        color:darkorange;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="menu">
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a class="active" href="home.html">Home</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="array">
+      <h2>Add Names</h2>
+      <input type="text" id="names" placeholder="Name" />
+      <button onclick="arrayitems()">Add</button>
+    </div>
+    <footer>
+      <p>NITHISH © 24</p>
+    </footer>
+  </body>
+  <script>
+    let arr = [];
+    function arrayitems() {
+      let a = document.getElementById("names").value;
+      if (a) {
+        arr.push(a);
+        console.log(arr);
+        document.getElementById("names").value = "";
+      } else {
+        alert("Enter a Name");
+      }
+    }
+  </script>
+</html>
