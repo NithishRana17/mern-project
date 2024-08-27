@@ -23,7 +23,7 @@ export default function Login() {
       });
       let json = await res.json();
       if (json["token"] == "QpwL5tke4Pnpja7X4") {
-        alert("Login successful!")
+        alert("Login successful!");
       } else {
         alert("credentials are wrong");
       }
