@@ -1,8 +1,10 @@
 var express = require("express");
+var cors = require("cors");
 var app = express();
 app.use(express.json());
+app.use(cors());
 
-var { MongoClient } = require("mongodb");
+var { MongoClient, ObjectId } = require("mongodb");
 
 const DATABASE_NAME = "office";
 const MONGODB_URL =
@@ -100,5 +102,40 @@ app.get("/web", (req, res) => {
 });
 app.post("/web", (req, res) => {
   res.json({ msg: "Hello Post" });
+});
+app.delete("deleteUserByName", async (req, res) => {
+  await client.connect();
+  let { name } = req.body;
+  let db = client.db(DATABASE_NAME);
+  await db.collection("employees").deleteOne({ name: name });
+  res.status(200).json({ message: "User deleted successfully" });
+});
+app.put("/updatePassword", async (req, res) => {
+  await client.connect();
+  let { name, password } = req.query;
+  let db = client.db("office");
+  await db
+    .collection("teachers")
+    .updateOne({ name: name }, { $set: { password: password } });
+  res.status(200).json({ message: "Password updated successfully" });
+});
+app.post("/updatePassword", async (req, res) => {
+  await client.connect();
+  let { name, password } = req.body;
+  let db = client.db("office");
+  await db
+    .collection("teachers")
+    .updateOne({ name: name }, { $set: { password: password } });
+  res.status(200).json({ message: "Password updated successfully" });
+});
+app.get("/getById", async (req, res) => {
+  await client.connect();
+  let { id } = req.query;
+  let db = client.db("office");
+  let teacher = await db
+    .collection("teachers")
+    .find({ _id: new ObjectId(id) })
+    .toArray();
+  res.json(teacher);
 });
 app.listen(8080);
